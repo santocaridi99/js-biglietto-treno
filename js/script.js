@@ -15,23 +15,23 @@ const k = 0.21;
 price = k * numberKm;
 price = parseFloat(price);
 console.log(price);
-//qui controllo se età è minore di 18 applico sconto del 20%
-//se età >=65 allora applico sconto del 40%
+//qui controllo se età è minore di 18 applico sconto del 20%(prezzo * 20 diviso 100)
+//se età >=65 allora applico sconto del 40%(prezzo * 40 diviso 100)
 //il resto paga senza sconti :D
-//dichiaro prima i miei sconti
-let sconto1= (price * 20) / 100; 
-sconto1 = parseFloat(sconto1);
-let sconto2=(price * 40) / 100;
-sconto2 = parseFloat(sconto2);
-//dichiaro variabile final price
+//dichiaro variabile sconto
+let sconto;
+sconto = parseFloat(sconto);
+//dichiaro variabile final price che sarà il prezzo pieno - sconto applicato
 let finalPrice;
 //qui svolgo la mia condizione
 if(age<18){
-    finalPrice = price - sconto1;
+    sconto= (price * 20) / 100; 
+    finalPrice = price - sconto;
     finalPrice=parseFloat(finalPrice).toFixed(2);
     outputHtml.innerHTML = `Il tuo prezzo è : ${finalPrice}€`;
 }else if(age>=65){
-    finalPrice = price - sconto2;
+    sconto = (price * 40) / 100;
+    finalPrice = price - sconto;
     finalPrice=parseFloat(finalPrice).toFixed(2);
     outputHtml.innerHTML = `il tuo prezzo è: ${finalPrice}€`;
 }else{
