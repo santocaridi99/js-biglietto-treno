@@ -2,7 +2,7 @@
 const outputHtml =  document.getElementById('output');
 //qui chiederò all'utente di inserire numero km che vuole percorrere con un prompt
 let numberKm = prompt('inserisci numero km che  vuoi percorrere');
-numberKm = parseInt(numberKm);
+numberKm = parseFloat(numberKm);
 console.log(numberKm);
 //qui chiederò all'utente l'età del passeggero attraverso prompt
 let age = prompt('inserisci età del passeggero');
@@ -13,7 +13,7 @@ console.log(age);
 //dichiaro una costante k per indicare 0.21 euro ,che moltiplicherò ai km
 const k = 0.21;
 price = k * numberKm;
-price = parseFloat(price);
+price = parseFloat(price).toFixed(2);
 console.log(price);
 //qui controllo se età è minore di 18 applico sconto del 20%(prezzo * 20 diviso 100)
 //se età >=65 allora applico sconto del 40%(prezzo * 40 diviso 100)
